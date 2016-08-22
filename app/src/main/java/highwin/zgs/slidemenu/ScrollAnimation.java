@@ -19,12 +19,13 @@ public class ScrollAnimation extends Animation {
     private float totalValue;
     private float startX;
 
+
     public ScrollAnimation(View v, float targetX, long time, TimeUnit unit) {
         this.v = v;
         this.targetX = targetX;
-        startX = v.getScrollX();
-        totalValue = targetX - startX;
-        setDuration(unit.toMillis(time));
+        startX = v.getScrollX();        //get current position of view
+        totalValue = targetX - startX;  //total distance has to move
+        setDuration(unit.toMillis(time));  //set time
 
     }
 

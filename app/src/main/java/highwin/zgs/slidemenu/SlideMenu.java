@@ -50,6 +50,7 @@ public class SlideMenu extends RelativeLayout {
     }
 
     //继承自FrameLayout就可以省下onMeasure的工作
+    //inherited from FraeLayout can save onMeasure by yourself
 /*    @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -62,10 +63,7 @@ public class SlideMenu extends RelativeLayout {
         mLeftView.layout(-mLeftViewWidth, 0, 0, b);
         mMainView.layout(0, 0, r, b);
     }
-
     private float intDownX;
-
-
     private float mDonwX;
 
     @Override
@@ -107,18 +105,18 @@ public class SlideMenu extends RelativeLayout {
                 //user ScrollAnimation
                /*  ScrollAnimation scrollAnimation;
                 if (getScrollX() > -mLeftViewWidth / 2) {
-                    //打开slideMenu
+                    //打开slideMenu||open menu
                     scrollAnimation = new ScrollAnimation(this, 0, 300, TimeUnit.MILLISECONDS);
                 } else {
-                    //关闭slideMenu
+                    //关闭slideMenu||close menu
                     scrollAnimation = new ScrollAnimation(this, -mLeftViewWidth, 300, TimeUnit.MILLISECONDS);
                 }
                 startAnimation(scrollAnimation);*/
                 if (getScrollX() > -mLeftViewWidth / 2) {
-                    //打开slideMenu
+                    //打开slideMenu||open menu
                     mScroller.startScroll(getScrollX(), 0, 0 - getScrollX(), 0, 300);
                 } else {
-                    //关闭slideMenu
+                    //关闭slideMenu||close menu
                     mScroller.startScroll(getScrollX(), 0, -mLeftViewWidth - getScrollX(), 0, 300);
                 }
                 invalidate();
@@ -129,7 +127,7 @@ public class SlideMenu extends RelativeLayout {
     @Override
     public void computeScroll() {
         if (mScroller != null) {
-            if (mScroller.computeScrollOffset()) {  //true表示动画没有结，还要继续刷新
+            if (mScroller.computeScrollOffset()) {  //true表示动画没有结，还要继续刷新||mScroller.computeScrollOffset()->true, the animationis not yet finished
                 int currX = mScroller.getCurrX();
                 scrollTo(currX, 0);
                 invalidate();
