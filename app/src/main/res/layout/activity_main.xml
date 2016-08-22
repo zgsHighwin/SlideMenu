@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="highwin.zgs.slidemenu.MainActivity">
+
+    <highwin.zgs.slidemenu.SlideMenu
+        android:id="@+id/sm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/left"
+            layout="@layout/left_menu_scroll" />
+
+        <include
+            android:id="@+id/main"
+            layout="@layout/right_main" />
+    </highwin.zgs.slidemenu.SlideMenu>
+</LinearLayout>
