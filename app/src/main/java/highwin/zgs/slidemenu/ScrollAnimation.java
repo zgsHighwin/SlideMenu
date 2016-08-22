@@ -30,7 +30,8 @@ public class ScrollAnimation extends Animation {
     }
 
     /**
-     * @param interpolatedTime 在动画执行过程中的百分比
+     * @param interpolatedTime 在动画执行过程中的百分比||The value of the normalized time (0.0 to 1.0)
+     *                         after it has been run through the interpolation function.
      * @param t
      */
     @Override
